@@ -398,7 +398,7 @@
 											"top": 386,
 											"width": 231,
 											"height": 13,
-											"text": "-fuleUsage: double",
+											"text": "-capacity: double",
 											"horizontalAlignment": 0
 										},
 										{
@@ -517,7 +517,7 @@
 											"top": 484,
 											"width": 231,
 											"height": 13,
-											"text": "+getFuelUsage(): double",
+											"text": "+getCapacity(): double",
 											"horizontalAlignment": 0
 										},
 										{
@@ -9893,7 +9893,7 @@
 							"_parent": {
 								"$ref": "AAAAAAFqIDVB5+uk4eM="
 							},
-							"name": "fuleUsage",
+							"name": "capacity",
 							"visibility": "private",
 							"type": "double"
 						},
@@ -10002,7 +10002,7 @@
 							"_parent": {
 								"$ref": "AAAAAAFqIDVB5+uk4eM="
 							},
-							"name": "getFuelUsage",
+							"name": "getCapacity",
 							"parameters": [
 								{
 									"_type": "UMLParameter",
