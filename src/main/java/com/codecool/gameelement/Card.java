@@ -9,7 +9,6 @@ public class Card {
     String carName;
 
     public Card(String carName, double topSpeed, double powerWeightRatio, double price, int capacity) {
-        this.containingPile = null;
         this.topSpeed = topSpeed;
         this.powerWeightRatio = powerWeightRatio;
         this.price = price;
