@@ -22,7 +22,6 @@ public class CardDaoXML implements CardDao {
     }
 
     private void loadXMLDocument(String xmlPath) {
-        Document doc;
         try {
             File fileToRead = new File(xmlPath);
             DocumentBuilderFactory documentBuilderFactory = DocumentBuilderFactory.newInstance();
