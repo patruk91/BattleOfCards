@@ -10,12 +10,11 @@ public class Viewer {
 
     public void printMenu() {
         System.out.println("Cars card game v1.0");
-        System.out.println("1. Game start\n 2. Rules\n 3. Credits 0. Exit");
+        System.out.println(" 1. Game start\n 2. Rules\n 3. Credits\n 0. Exit");
     }
 
-    public void printAttributesToCompare(Card card) {
-        System.out.println("Car attributes: ");
-        System.out.println(card.attributesToString());
+    public void printAttributesToCompare() {
+        System.out.println("1. Top Speed\n2. Power / Weight ratio\n 3. Price\n 4. Capacity ");
     }
 
     public void printError() {
