@@ -7,6 +7,7 @@ public class Player {
 
     public Player(String playerName) {
         this.playerName = playerName;
+        this.pile = new Pile();
     }
 
     public String getPlayerName() {
