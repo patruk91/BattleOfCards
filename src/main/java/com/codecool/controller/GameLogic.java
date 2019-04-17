@@ -14,10 +14,10 @@ import java.util.Comparator;
 import java.util.List;
 
 public class GameLogic {
-    Dealer dealer;
-    Table table;
-    Reader reader;
-    Viewer viewer;
+    private Dealer dealer;
+    private Table table;
+    private Reader reader;
+    private Viewer viewer;
 
     public GameLogic() {
         viewer = new Viewer();
@@ -40,7 +40,7 @@ public class GameLogic {
                     viewer.rules();
                     break;
                 case 3:
-                    viewer.Credits();
+                    viewer.credits();
                     break;
                 case 0:
                     exitApp = true;
@@ -100,8 +100,7 @@ public class GameLogic {
 
     private int getAmountOfPlayers() {
         viewer.printQuestion("How many players are going to play (2 - 5)");
-        int playersAmount = reader.getNumberInRange(2, 5);
-        return playersAmount;
+        return reader.getNumberInRange(2, 5);
     }
 
     private void addPlayersToTable(int playersAmount) {
@@ -117,8 +116,7 @@ public class GameLogic {
 
     private int getParameterToCompare() {
         viewer.printAttributesToCompare();
-        int attribute = reader.getNumberInRange(1, 4);
-        return attribute;
+        return reader.getNumberInRange(1, 4);
     }
 
     private Player getStartingPlayer() {
@@ -189,13 +187,6 @@ public class GameLogic {
     }
 
     private boolean checkIfGameOver() {
-        if(table.getPlayer().size() == 1) {
-            return true;
-        }
-        return false;
-    }
-
-    private Player getWinner() {
-        return table.getPlayer().get(0);
+        return table.getPlayer().size() == 1;
     }
 }

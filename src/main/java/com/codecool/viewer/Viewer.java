@@ -33,4 +33,12 @@ public class Viewer {
     public void printQuestion(String question) {
         System.out.println(question);
     }
+
+    public void rules() {
+        System.out.println("Rules");
+    }
+
+    public void credits() {
+        System.out.println("Credits");
+    }
 }
