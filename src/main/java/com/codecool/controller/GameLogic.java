@@ -36,7 +36,8 @@ public class GameLogic {
             while (!isGameOver) {
                 setPlayerAsStarting(table.getPlayer().get(0), true);
                 Player startingPlayer = getStartingPlayer();
-                
+                viewer.printMessage(startingPlayer.getName() + " your card:");
+                viewer.printMessage(startingPlayer.getTopCardFromPile().toString());
                 viewer.printMessage(startingPlayer.getName() + ": chose attribute to compare:");
                 int parameter = getParameterToCompare();
                 List<Card> cardsToCompare = getCardsToCompare();
@@ -48,7 +49,7 @@ public class GameLogic {
                 checkIfUsersInGame();
                 isGameOver = checkIfGameOver();
                 if(isGameOver) {
-                    viewer.printMessage(getWinner().getName());
+                    viewer.printWinScreen(table.getPlayer().get(0));
                 }
             }
             playAgain = reader.getRepeatGame();

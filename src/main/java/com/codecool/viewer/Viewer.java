@@ -26,7 +26,7 @@ public class Viewer {
     }
 
     public void printWinScreen(Player player) {
-        System.out.println("Congratulations! " + player.getPlayerName());
+        System.out.println("Congratulations! " + player.getName());
         System.out.println("You won!");
     }
 

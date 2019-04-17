@@ -1,5 +1,7 @@
 package com.codecool.gameelement;
 
+import java.io.BufferedReader;
+
 public class Card {
     Pile containingPile;
     double topSpeed;
@@ -48,5 +50,11 @@ public class Card {
         destinationPile.addCard(this);
         containingPile.removeCard(this);
         setContainingPile(destinationPile);
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder stringBuilder = new StringBuilder();
+        return stringBuilder.append(String.format("Name: %s\nTop speed: %d mph Capacity: %d cc Power to waigth ratio: %d bhp/ton Price: %d UDS")).toString();
     }
 }
