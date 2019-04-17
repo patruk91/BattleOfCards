@@ -27,39 +27,51 @@ public class GameLogic {
     }
 
     public void startGame() {
+        boolean playAgain = false;
+        while(!playAgain) {
+            int amountOfPlayers = getAmountOfPlayers();
+            addPlayersToTable(amountOfPlayers);
+
+            boolean isGameOver = false;
+            while (!isGameOver) {
+                setPlayerAsStarting(table.getPlayer().get(0), true);
+                Player startingPlayer = getStartingPlayer();
+                viewer.printMessage(startingPlayer.getName() + ": chose attribute to compare:");
+                int parameter = getParameterToCompare();
+                List<Card> cardsToCompare = getCardsToCompare();
+                User destinationUser = getWiningUser(parameter, cardsToCompare);
+                int curentAmountOfPlayers = table.getPlayer().size();
+                calculateAmountOfCards(destinationUser, cardsToCompare, curentAmountOfPlayers);
+                viewer.printMessage(destinationUser.getName() + " won round");
+                changeUsersOrder(destinationUser);
+                checkIfUsersInGame();
+                isGameOver = checkIfGameOver();
+            }
+            playAgain = reader.getRepeatGame();
+        }
+    }
+
+    private User getWiningUser(int parameter, List<Card> cardsToCompare) {
         final int SPEED = 1;
         final int RATIO = 2;
         final int PRICE = 3;
         final int CAPACITY = 4;
 
-        int amountOfPlayers = getAmountOfPlayers();
-        addPlayersToTable(amountOfPlayers);
-        setPlayerAsStarting(table.getPlayer().get(0), true);
-        Player startingPlayer = getStartingPlayer();
-        viewer.printMessage(startingPlayer.getName() + ": chose attribute to compare:");
-        int parameter = getParameterToCompare();
-        List<Card> cardsToCompare = getCardsToCompare();
         User destinationUser = dealer;
         switch (parameter) {
             case SPEED:
-                Comparator<Card> speedComparator = new TopSpeedComparator();
-                destinationUser = compareByComparator(speedComparator, cardsToCompare);
+                destinationUser = compareByComparator(new TopSpeedComparator(), cardsToCompare);
                 break;
             case RATIO:
-                Comparator<Card> ratioComparator = new PowerWeightComparator();
-                destinationUser = compareByComparator(ratioComparator, cardsToCompare);
+                destinationUser = compareByComparator(new PowerWeightComparator(), cardsToCompare);
                 break;
             case PRICE:
-                Comparator<Card> priceComparator = new PriceComparator();
-                destinationUser = compareByComparator(priceComparator, cardsToCompare);
+                destinationUser = compareByComparator(new PriceComparator(), cardsToCompare);
                 break;
             case CAPACITY:
-                Comparator<Card> capacityComparator = new CapacityComparator();
-                destinationUser = compareByComparator(capacityComparator, cardsToCompare);
+                destinationUser = compareByComparator(new CapacityComparator(), cardsToCompare);
         }
-        calculateAmountOfCards(destinationUser, cardsToCompare, amountOfPlayers);
-        viewer.printMessage(destinationUser.getName() + " won round");
-
+        return destinationUser;
     }
 
     private int getAmountOfPlayers() {
@@ -76,7 +88,7 @@ public class GameLogic {
     }
 
     private void setPlayerAsStarting(Player player, boolean bool) {
-        player.setPlayerFirst(bool);
+        player.setUserFirst(bool);
     }
 
     private int getParameterToCompare() {
@@ -87,7 +99,7 @@ public class GameLogic {
 
     private Player getStartingPlayer() {
         for (Player player: table.getPlayer()) {
-            if (player.isPlayerFirst()) {
+            if (player.isUserFirst()) {
                 return player;
             }
         }
@@ -130,5 +142,31 @@ public class GameLogic {
         for(int i = 0; i < amountOfCards; i++) {
             cards.get(i).moveToPile(user.getPile());
         }
+    }
+
+    private void changeUsersOrder(User winUser) {
+        if(!winUser.getName().equals("Dealer")) {
+            winUser.setUserFirst(true);
+            for(User user: table.getPlayer()) {
+                if(!user.getName().equals(winUser.getName())) {
+                    user.setUserFirst(false);
+                }
+            }
+        }
+    }
+
+    private void checkIfUsersInGame() {
+        for(Player player: table.getPlayer()) {
+            if (player.getPile().getCards().isEmpty()) {
+                table.removePlayer(player);
+            }
+        }
+    }
+
+    private boolean checkIfGameOver() {
+        if(table.getPlayer().size() == 1) {
+            return true;
+        }
+        return false;
     }
 }
