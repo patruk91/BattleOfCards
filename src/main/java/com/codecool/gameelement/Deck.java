@@ -1,20 +1,45 @@
 package com.codecool.gameelement;
 
 import java.util.Collections;
+import java.util.Iterator;
 import java.util.List;
+import java.util.NoSuchElementException;
 
 public class Deck {
-    List<Card> cards;
+    private List<Card> cards;
+    private Iterator deckIterator;
 
     public Deck(List<Card> cards) {
         this.cards = cards;
+        deckIterator = new DeckIterator();
     }
 
     public List<Card> getDeck() {
         return cards;
     }
 
-    public void shuffleDeck(Deck deck) {
-        Collections.shuffle(deck.getDeck());
+    public void shuffleDeck() {
+        Collections.shuffle(cards);
+    }
+
+    public Iterator getDeckIterator() {
+        return deckIterator;
+    }
+
+    private class DeckIterator implements Iterator<Card> {
+        int index = 0;
+
+        @Override
+        public boolean hasNext() {
+            return (index < cards.size());
+        }
+
+        @Override
+        public Card next() throws NoSuchElementException {
+            if (!this.hasNext()) {
+                throw new NoSuchElementException();
+            }
+            return cards.get(index++);
+        }
     }
 }
