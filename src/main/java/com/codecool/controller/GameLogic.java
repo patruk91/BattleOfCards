@@ -27,32 +27,51 @@ public class GameLogic {
     }
 
     public void startGame() {
-        boolean playAgain = false;
-        while(!playAgain) {
-            int amountOfPlayers = getAmountOfPlayers();
-            addPlayersToTable(amountOfPlayers);
-
-            boolean isGameOver = false;
-            while (!isGameOver) {
-                setPlayerAsStarting(table.getPlayer().get(0), true);
-                Player startingPlayer = getStartingPlayer();
-                viewer.printMessage(startingPlayer.getName() + " your card:");
-                viewer.printMessage(startingPlayer.getTopCardFromPile().toString());
-                viewer.printMessage(startingPlayer.getName() + ": chose attribute to compare:");
-                int parameter = getParameterToCompare();
-                List<Card> cardsToCompare = getCardsToCompare();
-                User destinationUser = getWiningUser(parameter, cardsToCompare);
-                int curentAmountOfPlayers = table.getPlayer().size();
-                calculateAmountOfCards(destinationUser, cardsToCompare, curentAmountOfPlayers);
-                viewer.printMessage(destinationUser.getName() + " won round");
-                changeUsersOrder(destinationUser);
-                checkIfUsersInGame();
-                isGameOver = checkIfGameOver();
-                if(isGameOver) {
-                    viewer.printWinScreen(table.getPlayer().get(0));
-                }
+        boolean exitApp = false;
+        while(!exitApp) {
+            viewer.printMenu();
+            viewer.printQuestion("Chose option: ");
+            int option = reader.getNumberInRange(0, 3);
+            switch (option) {
+                case 1:
+                    playGame();
+                    break;
+                case 2:
+                    viewer.rules();
+                    break;
+                case 3:
+                    viewer.Credits();
+                    break;
+                case 0:
+                    exitApp = true;
+                    break;
             }
-            playAgain = reader.getRepeatGame();
+        }
+    }
+
+    private void playGame() {
+        int amountOfPlayers = getAmountOfPlayers();
+        addPlayersToTable(amountOfPlayers);
+
+        boolean isGameOver = false;
+        while (!isGameOver) {
+            setPlayerAsStarting(table.getPlayer().get(0), true);
+            Player startingPlayer = getStartingPlayer();
+            viewer.printMessage(startingPlayer.getName() + " your card:");
+            viewer.printMessage(startingPlayer.getTopCardFromPile().toString());
+            viewer.printMessage(startingPlayer.getName() + ": chose attribute to compare:");
+            int parameter = getParameterToCompare();
+            List<Card> cardsToCompare = getCardsToCompare();
+            User destinationUser = getWiningUser(parameter, cardsToCompare);
+            int curentAmountOfPlayers = table.getPlayer().size();
+            calculateAmountOfCards(destinationUser, cardsToCompare, curentAmountOfPlayers);
+            viewer.printMessage(destinationUser.getName() + " won round");
+            changeUsersOrder(destinationUser);
+            checkIfUsersInGame();
+            isGameOver = checkIfGameOver();
+            if(isGameOver) {
+                viewer.printWinScreen(table.getPlayer().get(0));
+            }
         }
     }
 
