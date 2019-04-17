@@ -18,7 +18,7 @@ public class Viewer {
         System.out.println(card.attributesToString());
     }
 
-    public void printError(String string) {
+    public void printError() {
         System.out.println("Enter valid data");
     }
 
