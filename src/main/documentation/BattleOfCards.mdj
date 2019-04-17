@@ -659,7 +659,7 @@
 											},
 											"visible": false,
 											"font": "Arial;13;0",
-											"left": -352,
+											"left": -400,
 											"top": -256,
 											"height": 13
 										},
@@ -670,9 +670,9 @@
 												"$ref": "AAAAAAFqIDW81OvRBGo="
 											},
 											"font": "Arial;13;1",
-											"left": 413,
+											"left": 389,
 											"top": 159,
-											"width": 139.4326171875,
+											"width": 179.30859375,
 											"height": 13,
 											"text": "Deck"
 										},
@@ -684,7 +684,7 @@
 											},
 											"visible": false,
 											"font": "Arial;13;0",
-											"left": -352,
+											"left": -400,
 											"top": -256,
 											"width": 73.67724609375,
 											"height": 13,
@@ -698,16 +698,16 @@
 											},
 											"visible": false,
 											"font": "Arial;13;0",
-											"left": -352,
+											"left": -400,
 											"top": -256,
 											"height": 13,
 											"horizontalAlignment": 1
 										}
 									],
 									"font": "Arial;13;0",
-									"left": 408,
+									"left": 384,
 									"top": 152,
-									"width": 149.4326171875,
+									"width": 189.30859375,
 									"height": 25,
 									"stereotypeLabel": {
 										"$ref": "AAAAAAFqIDW81OvSMCs="
@@ -742,18 +742,18 @@
 												"$ref": "AAAAAAFqIDXkYev5oek="
 											},
 											"font": "Arial;13;0",
-											"left": 413,
+											"left": 389,
 											"top": 182,
-											"width": 139.4326171875,
+											"width": 179.30859375,
 											"height": 13,
 											"text": "-listOfCards: List<Card>",
 											"horizontalAlignment": 0
 										}
 									],
 									"font": "Arial;13;0",
-									"left": 408,
+									"left": 384,
 									"top": 177,
-									"width": 149.4326171875,
+									"width": 189.30859375,
 									"height": 23
 								},
 								{
@@ -776,9 +776,9 @@
 												"$ref": "AAAAAAFqIDZVnuwARiI="
 											},
 											"font": "Arial;13;0",
-											"left": 413,
+											"left": 389,
 											"top": 205,
-											"width": 139.4326171875,
+											"width": 179.30859375,
 											"height": 13,
 											"text": "+getDeck()",
 											"horizontalAlignment": 0
@@ -793,18 +793,18 @@
 												"$ref": "AAAAAAFqIDmduOwJbHE="
 											},
 											"font": "Arial;13;0",
-											"left": 413,
+											"left": 389,
 											"top": 220,
-											"width": 139.4326171875,
+											"width": 179.30859375,
 											"height": 13,
-											"text": "+deckshuffle()",
+											"text": "+shuffleDeck(deck: Deck): void",
 											"horizontalAlignment": 0
 										}
 									],
 									"font": "Arial;13;0",
-									"left": 408,
+									"left": 384,
 									"top": 200,
-									"width": 149.4326171875,
+									"width": 189.30859375,
 									"height": 38
 								},
 								{
@@ -818,7 +818,7 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": -176,
+									"left": -200,
 									"top": -128,
 									"width": 10,
 									"height": 10
@@ -834,7 +834,7 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": -176,
+									"left": -200,
 									"top": -128,
 									"width": 10,
 									"height": 10
@@ -842,9 +842,9 @@
 							],
 							"font": "Arial;13;0",
 							"containerChangeable": true,
-							"left": 408,
+							"left": 384,
 							"top": 152,
-							"width": 149.4326171875,
+							"width": 189.30859375,
 							"height": 86,
 							"nameCompartment": {
 								"$ref": "AAAAAAFqIDW81OvRBGo="
@@ -10681,7 +10681,29 @@
 							"_parent": {
 								"$ref": "AAAAAAFqIDW80+vOUa4="
 							},
-							"name": "deckshuffle"
+							"name": "shuffleDeck",
+							"parameters": [
+								{
+									"_type": "UMLParameter",
+									"_id": "AAAAAAFqKicL9ggazqI=",
+									"_parent": {
+										"$ref": "AAAAAAFqIDmduOwJbHE="
+									},
+									"name": "deck",
+									"type": {
+										"$ref": "AAAAAAFqIDW80+vOUa4="
+									}
+								},
+								{
+									"_type": "UMLParameter",
+									"_id": "AAAAAAFqKicL+AgbU3A=",
+									"_parent": {
+										"$ref": "AAAAAAFqIDmduOwJbHE="
+									},
+									"type": "void",
+									"direction": "return"
+								}
+							]
 						}
 					]
 				},
@@ -12426,7 +12448,8 @@
 							"_parent": {
 								"$ref": "AAAAAAFqJjlVV4n8o+w="
 							},
-							"name": "Document doc"
+							"name": "Document doc",
+							"type": ""
 						}
 					],
 					"operations": [
