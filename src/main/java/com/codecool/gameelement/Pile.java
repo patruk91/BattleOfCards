@@ -5,9 +5,18 @@ import java.util.List;
 
 public class Pile {
     private List<Card> cards;
+    private User containingUser;
 
     public Pile() {
         cards = new ArrayList<>();
+    }
+
+    public void setContainingUser(User containingUser) {
+        this.containingUser = containingUser;
+    }
+
+    public User getContainingUser() {
+        return containingUser;
     }
 
     public Card getTopCard() {

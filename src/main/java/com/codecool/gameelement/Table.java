@@ -22,4 +22,8 @@ public class Table {
     public void addCardsToCompare(Player player) {
         this.cardsToCompare.add(player.getTopCardFromPile());
     }
+
+    public void removePlayer(Player player) {
+        players.remove(player);
+    }
 }

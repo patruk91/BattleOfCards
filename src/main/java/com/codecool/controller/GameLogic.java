@@ -32,36 +32,40 @@ public class GameLogic {
         final int PRICE = 3;
         final int CAPACITY = 4;
 
-        getAmountOfPlayers();
+        int amountOfPlayers = getAmountOfPlayers();
+        addPlayersToTable(amountOfPlayers);
         setPlayerAsStarting(table.getPlayer().get(0), true);
         Player startingPlayer = getStartingPlayer();
-        viewer.printMessage(startingPlayer.getPlayerName() + ": chose attribute to compare:");
+        viewer.printMessage(startingPlayer.getName() + ": chose attribute to compare:");
         int parameter = getParameterToCompare();
-        Pile destinationPile = null;
+        List<Card> cardsToCompare = getCardsToCompare();
+        User destinationUser = dealer;
         switch (parameter) {
             case SPEED:
                 Comparator<Card> speedComparator = new TopSpeedComparator();
-                destinationPile = compareByComparator(speedComparator);
+                destinationUser = compareByComparator(speedComparator, cardsToCompare);
                 break;
             case RATIO:
                 Comparator<Card> ratioComparator = new PowerWeightComparator();
-                destinationPile = compareByComparator(ratioComparator);
+                destinationUser = compareByComparator(ratioComparator, cardsToCompare);
                 break;
             case PRICE:
                 Comparator<Card> priceComparator = new PriceComparator();
-                destinationPile = compareByComparator(priceComparator);
+                destinationUser = compareByComparator(priceComparator, cardsToCompare);
                 break;
             case CAPACITY:
                 Comparator<Card> capacityComparator = new CapacityComparator();
-                destinationPile = compareByComparator(capacityComparator);
+                destinationUser = compareByComparator(capacityComparator, cardsToCompare);
         }
+        calculateAmountOfCards(destinationUser, cardsToCompare, amountOfPlayers);
+        viewer.printMessage(destinationUser.getName() + " won round");
 
     }
 
-    private void getAmountOfPlayers() {
+    private int getAmountOfPlayers() {
         viewer.printQuestion("How many players are going to play (2 - 5)");
         int playersAmount = reader.getNumberInRange(2, 5);
-        addPlayersToTable(playersAmount);
+        return playersAmount;
     }
 
     private void addPlayersToTable(int playersAmount) {
@@ -90,14 +94,12 @@ public class GameLogic {
         return new Player("NoOne");
     }
 
-    private Pile compareByComparator(Comparator comparator) {
-        List<Card> cardsToCompare = getCardsToCompare();
-
-        Collections.sort(cardsToCompare, comparator);
-        if (comparator.compare(cardsToCompare.get(cardsToCompare.size() - 1), cardsToCompare.get(cardsToCompare.size() - 2)) == 0) {
-            return table.getNotWonCards();
+    private User compareByComparator(Comparator comparator, List<Card> cards) {
+        Collections.sort(cards, comparator);
+        if (comparator.compare(cards.get(cards.size() - 1), cards.get(cards.size() - 2)) == 0) {
+            return dealer;
         }
-        return cardsToCompare.get(cardsToCompare.size() - 1).getContainingPile();
+        return cards.get(cards.size() - 1).getContainingPile().getContainingUser();
     }
 
     private List<Card> getCardsToCompare() {
@@ -108,5 +110,25 @@ public class GameLogic {
         }
 
         return cardsToCompare;
+    }
+
+    private void calculateAmountOfCards(User user, List<Card> cards, int amountOfPlayers) {
+        int cardsToMove = 0;
+        if(user.getName().equals("Dealer")) {
+            cardsToMove = amountOfPlayers;
+        } else {
+            cardsToMove = amountOfPlayers - 1;
+        }
+        moveCards(user, cards, cardsToMove);
+        if(!user.getName().equals("Dealer") && !dealer.getPile().getCards().isEmpty()) {
+            List<Card> dealerCards = dealer.getPile().getCards();
+            moveCards(user, dealerCards, dealerCards.size());
+        }
+    }
+
+    private void moveCards(User user, List<Card> cards, int amountOfCards) {
+        for(int i = 0; i < amountOfCards; i++) {
+            cards.get(i).moveToPile(user.getPile());
+        }
     }
 }

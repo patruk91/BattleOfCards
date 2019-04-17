@@ -7,6 +7,7 @@ public abstract class User {
     public User(String name) {
         this.name = name;
         pile = new Pile();
+        pile.setContainingUser(this);
     }
 
     public String getName() {
