@@ -1,10 +1,17 @@
 package com.codecool.controller;
 
-import com.codecool.gameelement.Dealer;
-import com.codecool.gameelement.Player;
-import com.codecool.gameelement.Table;
+import com.codecool.comparator.CapacityComparator;
+import com.codecool.comparator.PowerWeightComparator;
+import com.codecool.comparator.PriceComparator;
+import com.codecool.comparator.TopSpeedComparator;
+import com.codecool.gameelement.*;
 import com.codecool.reader.Reader;
 import com.codecool.viewer.Viewer;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.List;
 
 public class GameLogic {
     Dealer dealer;
@@ -30,18 +37,23 @@ public class GameLogic {
         Player startingPlayer = getStartingPlayer();
         viewer.printMessage(startingPlayer.getPlayerName() + ": chose attribute to compare:");
         int parameter = getParameterToCompare();
+        Pile destinationPile = null;
         switch (parameter) {
             case SPEED:
-                compareBySpped();
+                Comparator<Card> speedComparator = new TopSpeedComparator();
+                destinationPile = compareByComparator(speedComparator);
                 break;
             case RATIO:
-                compareByRation();
+                Comparator<Card> ratioComparator = new PowerWeightComparator();
+                destinationPile = compareByComparator(ratioComparator);
                 break;
             case PRICE:
-                compareByPrice();
+                Comparator<Card> priceComparator = new PriceComparator();
+                destinationPile = compareByComparator(priceComparator);
                 break;
             case CAPACITY:
-                compareByCapacity();
+                Comparator<Card> capacityComparator = new CapacityComparator();
+                destinationPile = compareByComparator(capacityComparator);
         }
     }
 
@@ -77,19 +89,23 @@ public class GameLogic {
         return new Player("NoOne");
     }
 
-    private Player compareBySpped() {
+    private Pile compareByComparator(Comparator comparator) {
+        List<Card> cardsToCompare = getCardsToCompare();
 
+        Collections.sort(cardsToCompare, comparator);
+        if (comparator.compare(cardsToCompare.get(cardsToCompare.size() - 1), cardsToCompare.get(cardsToCompare.size() - 2)) == 0) {
+            return table.getNotWonCards();
+        }
+        return cardsToCompare.get(cardsToCompare.size() - 1).getContainingPile();
     }
 
-    private Player compareByRation() {
+    private List<Card> getCardsToCompare() {
+        List<Card> cardsToCompare = new ArrayList<>();
 
-    }
+        for (Player player: table.getPlayer()) {
+            cardsToCompare.add(player.getTopCardFromPile());
+        }
 
-    private Player compareByPrice() {
-
-    }
-
-    private Player compareByCapacity() {
-        
+        return cardsToCompare;
     }
 }

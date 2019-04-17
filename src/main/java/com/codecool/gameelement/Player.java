@@ -8,6 +8,7 @@ public class Player {
     public Player(String playerName) {
         this.playerName = playerName;
         this.pile = new Pile();
+        pile.setContainingPlayer(this);
     }
 
     public String getPlayerName() {
