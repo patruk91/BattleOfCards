@@ -9,7 +9,6 @@ public class Dealer {
     private static final int AMOUNT_OF_CARDS_PER_PLAYER = 5;
     private Deck deck;
     private Table table;
-    private int playersAmount;
 
     public Dealer() {
         CardDao daoSource = new CardDaoXML();
@@ -36,9 +35,5 @@ public class Dealer {
                 card.setContainingPile(table.getPlayer().get(i).getPile());
             }
         }
-    }
-
-    public void setPlayersAmount(int playerAmount) {
-        this.playersAmount = playerAmount;
     }
 }
