@@ -20,7 +20,29 @@ public class GameLogic {
     }
 
     public void startGame() {
+        final int SPEED = 1;
+        final int RATIO = 2;
+        final int PRICE = 3;
+        final int CAPACITY = 4;
 
+        getAmountOfPlayers();
+        setPlayerAsStarting(table.getPlayer().get(0), true);
+        Player startingPlayer = getStartingPlayer();
+        viewer.printMessage(startingPlayer.getPlayerName() + ": chose attribute to compare:");
+        int parameter = getParameterToCompare();
+        switch (parameter) {
+            case SPEED:
+                compareBySpped();
+                break;
+            case RATIO:
+                compareByRation();
+                break;
+            case PRICE:
+                compareByPrice();
+                break;
+            case CAPACITY:
+                compareByCapacity();
+        }
     }
 
     private void getAmountOfPlayers() {
@@ -44,5 +66,30 @@ public class GameLogic {
         viewer.printAttributesToCompare();
         int attribute = reader.getNumberInRange(1, 4);
         return attribute;
+    }
+
+    private Player getStartingPlayer() {
+        for (Player player: table.getPlayer()) {
+            if (player.isPlayerFirst()) {
+                return player;
+            }
+        }
+        return new Player("NoOne");
+    }
+
+    private Player compareBySpped() {
+
+    }
+
+    private Player compareByRation() {
+
+    }
+
+    private Player compareByPrice() {
+
+    }
+
+    private Player compareByCapacity() {
+        
     }
 }
