@@ -1,4 +1,9 @@
 package com.codecool.dao;
 
-public class CardDao {
+import com.codecool.gameelement.Card;
+
+import java.util.List;
+
+public interface CardDao {
+    List<Card> getAllCards();
 }
