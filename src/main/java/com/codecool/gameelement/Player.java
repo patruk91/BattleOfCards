@@ -25,4 +25,8 @@ public class Player {
     public void setPlayerFirst(boolean isPlayerFirst) {
         this.isPlayerFirst = isPlayerFirst;
     }
+
+    public Card getTopCardFromPile() {
+        return pile.getTopCard();
+    }
 }
