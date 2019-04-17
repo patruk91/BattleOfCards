@@ -55,6 +55,7 @@ public class GameLogic {
                 Comparator<Card> capacityComparator = new CapacityComparator();
                 destinationPile = compareByComparator(capacityComparator);
         }
+
     }
 
     private void getAmountOfPlayers() {

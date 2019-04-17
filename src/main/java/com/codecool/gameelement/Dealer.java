@@ -5,15 +5,16 @@ import com.codecool.dao.CardDaoXML;
 
 import java.util.Iterator;
 
-public class Dealer {
+public class Dealer extends User{
     private static final int AMOUNT_OF_CARDS_PER_PLAYER = 5;
     private Deck deck;
     private Table table;
 
     public Dealer() {
+        super("Dealer");
         CardDao daoSource = new CardDaoXML();
         deck = new Deck(daoSource.getAllCards());
-        Table table = new Table();
+        table = new Table();
     }
 
     public Table getTable() {

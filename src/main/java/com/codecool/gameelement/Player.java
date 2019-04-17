@@ -1,22 +1,10 @@
 package com.codecool.gameelement;
 
-public class Player {
-    private String playerName;
-    private Pile pile;
+public class Player extends User{
     private boolean isPlayerFirst = false;
 
     public Player(String playerName) {
-        this.playerName = playerName;
-        this.pile = new Pile();
-        pile.setContainingPlayer(this);
-    }
-
-    public String getPlayerName() {
-        return playerName;
-    }
-
-    public Pile getPile() {
-        return pile;
+        super(playerName);
     }
 
     public boolean isPlayerFirst() {

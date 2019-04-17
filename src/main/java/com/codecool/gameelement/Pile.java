@@ -5,7 +5,6 @@ import java.util.List;
 
 public class Pile {
     private List<Card> cards;
-    private Player containingPlayer;
 
     public Pile() {
         cards = new ArrayList<>();
@@ -25,13 +24,5 @@ public class Pile {
 
     public List<Card> getCards() {
         return cards;
-    }
-
-    public Player getContainingPlayer() {
-        return containingPlayer;
-    }
-
-    public void setContainingPlayer(Player containingPlayer) {
-        this.containingPlayer = containingPlayer;
     }
 }
