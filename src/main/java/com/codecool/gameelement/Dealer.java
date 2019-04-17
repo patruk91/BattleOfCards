@@ -13,7 +13,7 @@ public class Dealer {
 
     public Dealer() {
         CardDao daoSource = new CardDaoXML();
-        daoSource.getAllCards();
+        deck = new Deck(daoSource.getAllCards());
         Table table = new Table();
     }
 
@@ -22,19 +22,18 @@ public class Dealer {
     }
 
     public void dealCards() {
-
         for (int i = 0; i < table.getPlayer().size(); i++) {
             dealFiveCards(i);
         }
     }
 
     private void dealFiveCards(int i) {
-        Iterator deckIterator = deck.getIterator();
+        Iterator<Card> deckIterator = deck.getDeckIterator();
         for (int j = 1; j < AMOUNT_OF_CARDS_PER_PLAYER; j++) {
             if (deckIterator.hasNext()) {
                 Card card = deckIterator.next();
                 table.getPlayer().get(i).getPile().addCard(card);
-                card.setCOntainingPile(table.getPlayer().get(i).getPile());
+                card.setContainingPile(table.getPlayer().get(i).getPile());
             }
         }
     }
