@@ -46,6 +46,9 @@ public class GameLogic {
                 changeUsersOrder(destinationUser);
                 checkIfUsersInGame();
                 isGameOver = checkIfGameOver();
+                if(isGameOver) {
+                    viewer.printMessage(getWinner().getName());
+                }
             }
             playAgain = reader.getRepeatGame();
         }
@@ -168,5 +171,9 @@ public class GameLogic {
             return true;
         }
         return false;
+    }
+
+    private Player getWinner() {
+        return table.getPlayer().get(0);
     }
 }
