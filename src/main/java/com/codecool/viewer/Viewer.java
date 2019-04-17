@@ -1,5 +1,6 @@
 package com.codecool.viewer;
 import com.codecool.gameelement.Player;
+import com.codecool.gameelement.Card;
 
 public class Viewer {
 
@@ -12,24 +13,25 @@ public class Viewer {
         System.out.println("1. Game start\n 2. Rules\n 3. Credits 0. Exit");
     }
 
-    public void printAttributesToCompare() {
-        System.out.println("Comparing top cards: ");
-        
+    public void printAttributesToCompare(Card card) {
+        System.out.println("Car attributes: ");
+        System.out.println(card.attributesToString());
     }
 
     public void printError(String string) {
-        System.out.println("");
+        System.out.println("Enter valid data");
     }
 
     public void printMessage(String string) {
-        System.out.println("");
+        System.out.println(string);
     }
 
     public void printWinScreen(Player player) {
-        System.out.println("");
+        System.out.println("Congratulations! " + player.getPlayerName());
+        System.out.println("You won!");
     }
 
-    public void printQuestion() {
-        System.out.println("");
+    public void printQuestion(String question) {
+        System.out.println(question);
     }
 }
