@@ -7,7 +7,7 @@ import java.util.NoSuchElementException;
 
 public class Deck {
     private List<Card> cards;
-    private Iterator deckIterator;
+    private Iterator<Card> deckIterator;
 
     public Deck(List<Card> cards) {
         this.cards = cards;
@@ -22,16 +22,16 @@ public class Deck {
         Collections.shuffle(cards);
     }
 
-    public Iterator getDeckIterator() {
+    public Iterator<Card> getDeckIterator() {
         return deckIterator;
     }
 
     private class DeckIterator implements Iterator<Card> {
-        int index = 0;
+        private int index = 0;
 
         @Override
         public boolean hasNext() {
-            return (index < cards.size());
+            return index < cards.size();
         }
 
         @Override
