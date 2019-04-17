@@ -36,6 +36,7 @@ public class GameLogic {
             while (!isGameOver) {
                 setPlayerAsStarting(table.getPlayer().get(0), true);
                 Player startingPlayer = getStartingPlayer();
+                
                 viewer.printMessage(startingPlayer.getName() + ": chose attribute to compare:");
                 int parameter = getParameterToCompare();
                 List<Card> cardsToCompare = getCardsToCompare();
@@ -161,6 +162,7 @@ public class GameLogic {
     private void checkIfUsersInGame() {
         for(Player player: table.getPlayer()) {
             if (player.getPile().getCards().isEmpty()) {
+                viewer.printMessage(player.getName() + " los all his cards.");
                 table.removePlayer(player);
             }
         }
