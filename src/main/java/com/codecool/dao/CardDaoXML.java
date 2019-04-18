@@ -13,7 +13,7 @@ public class CardDaoXML extends CardDaoLoadXML implements CardDao {
     private List<Card> allCards = new ArrayList<>();
 
     public CardDaoXML() {
-        loadXMLDocument("src/main/resources/cards.xml");
+        loadXMLDocument("cards.xml");
         parseCards(getDoc());
     }
 
