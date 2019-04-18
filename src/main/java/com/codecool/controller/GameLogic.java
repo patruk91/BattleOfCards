@@ -27,7 +27,7 @@ public class GameLogic {
         boolean exitApp = false;
         while(!exitApp) {
             viewer.printMenu();
-            viewer.printQuestion("Chose option: ");
+            viewer.printQuestion("Chose option");
             int option = reader.getNumberInRange(0, 3);
             switch (option) {
                 case 1:
@@ -118,7 +118,7 @@ public class GameLogic {
 
     private void addPlayersToTable(int playersAmount) {
         for (int i = 0; i < playersAmount; i++) {
-            String name = reader.getNameFromUser();
+            String name = reader.getNameFromUser(i + 1);
             table.addPlayer(name);
         }
     }
