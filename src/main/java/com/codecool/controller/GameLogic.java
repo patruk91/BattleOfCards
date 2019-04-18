@@ -188,10 +188,14 @@ public class GameLogic {
     private void changeUsersOrder(User winUser) {
         if(!winUser.getName().equals("Dealer")) {
             winUser.setUserFirst(true);
-            for(User user: table.getPlayer()) {
-                if(!user.getName().equals(winUser.getName())) {
-                    user.setUserFirst(false);
-                }
+            changeOtherUsersOrder(winUser);
+        }
+    }
+
+    private void changeOtherUsersOrder(User winUser) {
+        for(User user: table.getPlayer()) {
+            if(!user.getName().equals(winUser.getName())) {
+                user.setUserFirst(false);
             }
         }
     }
