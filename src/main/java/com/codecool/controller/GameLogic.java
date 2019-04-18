@@ -26,6 +26,7 @@ public class GameLogic {
     public void startGame() {
         boolean exitApp = false;
         while(!exitApp) {
+            viewer.clearScreen();
             viewer.printMenu();
             viewer.printQuestion("Chose option");
             int option = reader.getNumberInRange(0, 3);
@@ -47,7 +48,9 @@ public class GameLogic {
     }
 
     private void playGame() {
+        viewer.clearScreen();
         int amountOfPlayers = getAmountOfPlayers();
+        viewer.clearScreen();
         addPlayersToTable(amountOfPlayers);
         dealer.shuffleDeck();
         dealer.dealCards();
@@ -55,6 +58,7 @@ public class GameLogic {
 
         boolean isGameOver = false;
         while (!isGameOver) {
+            viewer.clearScreen();
             Player startingPlayer = getStartingPlayer();
             showPlayersCardAmount();
             viewer.printMessage(startingPlayer.getName() + " your card:\n");
@@ -67,8 +71,10 @@ public class GameLogic {
             changeUsersOrder(destinationUser);
             checkIfUsersInGame();
             isGameOver = checkIfGameOver();
+            promptEnterKey();
             if(isGameOver) {
                 viewer.printWinScreen(table.getPlayer().get(0));
+                promptEnterKey();
                 resetGame();
             }
         }
@@ -213,5 +219,11 @@ public class GameLogic {
 
     private boolean checkIfGameOver() {
         return table.getPlayer().size() == 1;
+    }
+
+    public void promptEnterKey(){
+        viewer.printMessage("Press 'ENTER' to continue...");
+        Scanner scanner = new Scanner(System.in);
+        scanner.nextLine();
     }
 }
