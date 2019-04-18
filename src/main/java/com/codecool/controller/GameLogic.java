@@ -8,10 +8,7 @@ import com.codecool.gameelement.*;
 import com.codecool.reader.Reader;
 import com.codecool.viewer.Viewer;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.List;
+import java.util.*;
 
 public class GameLogic {
     private Dealer dealer;
@@ -196,11 +193,12 @@ public class GameLogic {
     }
 
     private void checkIfUsersInGame() {
-        for(int i = 0; i < table.getPlayer().size(); i++) {
-            Player player = table.getPlayer().get(i);
-            if (player.getPile().getCards().isEmpty()) {
+        Iterator<Player> playerIterator = table.getPlayer().iterator();
+        while(playerIterator.hasNext()) {
+            Player player = playerIterator.next();
+            if(player.getPile().getCards().isEmpty()) {
                 viewer.printMessage(player.getName() + " los all his cards.");
-                table.removePlayer(player);
+                playerIterator.remove();
             }
         }
     }
