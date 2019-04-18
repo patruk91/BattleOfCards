@@ -75,9 +75,12 @@ public class GameLogic {
     }
 
     private void showPlayersCardAmount() {
+        StringBuilder stringBuilder = new StringBuilder();
         for (Player player : table.getPlayer()) {
-            System.out.println(player.getName() + " " + player.getPile().getCards().size());
+            stringBuilder.append(String.format("%s: %s cards\t", player.getName(), player.getPile().getCards().size()));
         }
+        stringBuilder.append("\n");
+        viewer.printMessage(stringBuilder.toString());
     }
 
     private void resetGame() {
