@@ -1,6 +1,5 @@
 package com.codecool.viewer;
 import com.codecool.gameelement.Player;
-import com.codecool.gameelement.Card;
 
 public class Viewer {
 
