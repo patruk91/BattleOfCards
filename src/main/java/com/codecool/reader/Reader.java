@@ -21,11 +21,11 @@ public class Reader {
         return userInput;
     }
 
-    public String getNameFromUser() {
+    public String getNameFromUser(int i) {
         String result = "";
         boolean isAnswerCorrect = false;
         while(!isAnswerCorrect) {
-            viewer.printQuestion("What is your name");
+            viewer.printQuestion("Player" + i + " what is your name");
             String name = getStringFromUser();
             if(validator.checkIfStringIsNotEmpty(name)) {
                 isAnswerCorrect = true;
@@ -43,7 +43,7 @@ public class Reader {
             if(validator.checkIfStringIsNotEmpty(input)) {
                 if(validator.checkIfNumber(input)) {
                     int intInput = Integer.parseInt(input);
-                    if(validator.checkIfNumberInRange(intInput, start, end)) {
+                    if(validator.checkIfNumberInRange(start, end, intInput)) {
                         result = intInput;
                         isAnswerCorrect = true;
                     }

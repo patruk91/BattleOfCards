@@ -13,12 +13,12 @@ public class CardDaoXML extends CardDaoLoadXML implements CardDao {
     private List<Card> allCards = new ArrayList<>();
 
     public CardDaoXML() {
-        loadXMLDocument("src/main/resources/cards.xml");
+        loadXMLDocument("cards.xml");
         parseCards(getDoc());
     }
 
     private void parseCards(Document document) {
-        NodeList nodeListCards = document.getElementsByTagName("Cars");
+        NodeList nodeListCards = document.getElementsByTagName("Car");
         for (int i = 0; i < nodeListCards.getLength(); i++) {
             Node nodeCard = nodeListCards.item(i);
             if (nodeCard.getNodeType() == Node.ELEMENT_NODE) {
@@ -31,7 +31,7 @@ public class CardDaoXML extends CardDaoLoadXML implements CardDao {
 
     private Card createCard(Element element) {
         String carName = element.getAttribute("name");
-        Element carElement = (Element) element.getElementsByTagName("Statistics");
+        Element carElement = (Element) element.getElementsByTagName("Statistics").item(0);
         NodeList carList = carElement.getElementsByTagName("Statistic");
 
         double speed = Double.parseDouble(carList.item(0).getFirstChild().getTextContent());

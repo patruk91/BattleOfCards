@@ -47,7 +47,7 @@
 
     <Car name="AC SchnitzerACS8">
         <Statistics>
-            <Statistic id="Speed">155</Statistic>
+            <Statistic id="Speed">149</Statistic>
             <Statistic id="Ratio">246</Statistic>
             <Statistic id="Price">125000</Statistic>
             <Statistic id="Capacity">1499</Statistic>

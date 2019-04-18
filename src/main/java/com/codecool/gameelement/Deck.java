@@ -1,5 +1,7 @@
 package com.codecool.gameelement;
 
+import com.codecool.iteratorinterface.ResetIterator;
+
 import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
@@ -7,7 +9,7 @@ import java.util.NoSuchElementException;
 
 public class Deck {
     private List<Card> cards;
-    private Iterator<Card> deckIterator;
+    private ResetIterator<Card> deckIterator;
 
     public Deck(List<Card> cards) {
         this.cards = cards;
@@ -18,15 +20,11 @@ public class Deck {
         return cards;
     }
 
-    public void shuffleDeck() {
-        Collections.shuffle(cards);
-    }
-
-    public Iterator<Card> getDeckIterator() {
+    public ResetIterator<Card> getDeckIterator() {
         return deckIterator;
     }
 
-    private class DeckIterator implements Iterator<Card> {
+    private class DeckIterator implements ResetIterator<Card> {
         private int index = 0;
 
         @Override
@@ -40,6 +38,10 @@ public class Deck {
                 throw new NoSuchElementException();
             }
             return cards.get(index++);
+        }
+
+        public void resetIterator() {
+            index = 0;
         }
     }
 }
