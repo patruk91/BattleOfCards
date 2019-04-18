@@ -60,7 +60,7 @@ public class Card {
     @Override
     public String toString() {
         StringBuilder stringBuilder = new StringBuilder();
-        return stringBuilder.append(String.format("Name: %s\nTop speed: %s mph | Power to weight ratio: %s bhp/ton | Capacity: %s cc | Price: %s USD",
+        return stringBuilder.append(String.format("Name: %s\nTop speed: %s mph | Power to weight ratio: %s bhp/ton | Price: %s USD | Capacity: %s cc",
                 carName, topSpeed, capacity, powerWeightRatio, price)).toString();
     }
 }
