@@ -1,5 +1,7 @@
 package com.codecool.gameelement;
 
+import java.util.List;
+
 public class Card {
     private Pile containingPile;
     private double topSpeed;
@@ -47,6 +49,11 @@ public class Card {
     public void moveToPile(Pile destinationPile) {
         destinationPile.addCard(this);
         containingPile.removeCard(this);
+        setContainingPile(destinationPile);
+    }
+
+    public void moveFromDealer(Pile destinationPile) {
+        destinationPile.addCard(this);
         setContainingPile(destinationPile);
     }
 

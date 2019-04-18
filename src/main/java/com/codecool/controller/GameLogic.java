@@ -160,12 +160,13 @@ public class GameLogic {
     }
 
     private void calculateAmountOfCards(User user, List<Card> cards) {
-        System.out.println();
-        if(!user.getName().equals("Dealer")) {
+        if (!user.getName().equals("Dealer")) {
             moveCards(user, cards);
             if (!dealer.getPile().getCards().isEmpty()) {
-                moveCards(user, dealer.getPile().getCards());
+                moveCardsFromDealer(user, dealer.getPile().getCards());
             }
+        } else {
+            moveCards(dealer, cards);
         }
     }
 
@@ -173,6 +174,13 @@ public class GameLogic {
         for(int i = 0; i < cards.size(); i++) {
             cards.get(i).moveToPile(user.getPile());
         }
+    }
+
+    private void moveCardsFromDealer(User user, List<Card> cards) {
+        for(int i = 0; i < cards.size(); i++) {
+            cards.get(i).moveFromDealer(user.getPile());
+        }
+        dealer.getPile().getCards().clear();
     }
 
 
