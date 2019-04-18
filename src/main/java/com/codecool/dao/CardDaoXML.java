@@ -31,7 +31,7 @@ public class CardDaoXML extends CardDaoLoadXML implements CardDao {
 
     private Card createCard(Element element) {
         String carName = element.getAttribute("name");
-        Element carElement = (Element) element.getElementsByTagName("Statistics");
+        Element carElement = (Element) element.getElementsByTagName("Statistics").item(0);
         NodeList carList = carElement.getElementsByTagName("Statistic");
 
         double speed = Double.parseDouble(carList.item(0).getFirstChild().getTextContent());
