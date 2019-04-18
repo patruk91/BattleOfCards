@@ -65,8 +65,7 @@ public class GameLogic {
             int parameter = getParameterToCompare();
             List<Card> cardsToCompare = getCardsToCompare();
             User destinationUser = getWiningUser(parameter, cardsToCompare);
-            int currentAmountOfPlayers = table.getPlayer().size();
-            calculateAmountOfCards(destinationUser, cardsToCompare, currentAmountOfPlayers);
+            calculateAmountOfCards(destinationUser, cardsToCompare);
             viewer.printMessage(destinationUser.getName() + " won round");
             changeUsersOrder(destinationUser);
             checkIfUsersInGame();
@@ -160,11 +159,13 @@ public class GameLogic {
         return cardsToCompare;
     }
 
-    private void calculateAmountOfCards(User user, List<Card> cards, int amountOfPlayers) {
-        moveCards(user, cards);
-        if(!user.getName().equals("Dealer") && !dealer.getPile().getCards().isEmpty()) {
-            List<Card> dealerCards = dealer.getPile().getCards();
-            moveCards(user, dealerCards);
+    private void calculateAmountOfCards(User user, List<Card> cards) {
+        System.out.println();
+        if(!user.getName().equals("Dealer")) {
+            moveCards(user, cards);
+            if (!dealer.getPile().getCards().isEmpty()) {
+                moveCards(user, dealer.getPile().getCards());
+            }
         }
     }
 
@@ -172,8 +173,8 @@ public class GameLogic {
         for(int i = 0; i < cards.size(); i++) {
             cards.get(i).moveToPile(user.getPile());
         }
-        user.getPile().removeLastCard();
     }
+
 
     private void changeUsersOrder(User winUser) {
         if(!winUser.getName().equals("Dealer")) {
