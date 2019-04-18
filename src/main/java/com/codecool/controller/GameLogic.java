@@ -58,6 +58,7 @@ public class GameLogic {
         boolean isGameOver = false;
         while (!isGameOver) {
             Player startingPlayer = getStartingPlayer();
+            showPlayersCardAmount();
             viewer.printMessage(startingPlayer.getName() + " your card:");
             viewer.printMessage(startingPlayer.getTopCardFromPile().toString());
             viewer.printMessage(startingPlayer.getName() + ": chose attribute to compare:");
@@ -72,8 +73,20 @@ public class GameLogic {
             isGameOver = checkIfGameOver();
             if(isGameOver) {
                 viewer.printWinScreen(table.getPlayer().get(0));
+                resetGame();
             }
         }
+    }
+
+    private void showPlayersCardAmount() {
+        for (Player player : table.getPlayer()) {
+            System.out.println(player.getName() + " " + player.getPile().getCards().size());
+        }
+    }
+
+    private void resetGame() {
+        table.resetTable();
+        dealer.resetIterator();
     }
 
     private User getWiningUser(int parameter, List<Card> cardsToCompare) {
@@ -174,7 +187,8 @@ public class GameLogic {
     }
 
     private void checkIfUsersInGame() {
-        for(Player player: table.getPlayer()) {
+        for(int i = 0; i < table.getPlayer().size(); i++) {
+            Player player = table.getPlayer().get(i);
             if (player.getPile().getCards().isEmpty()) {
                 viewer.printMessage(player.getName() + " los all his cards.");
                 table.removePlayer(player);

@@ -5,10 +5,9 @@ import java.util.List;
 
 public class Table {
     private List<Player> players;
-    private List<Card> cardsToCompare = new ArrayList<>();
 
     public Table() {
-        this.players = new ArrayList<Player>();
+        this.players = new ArrayList<>();
     }
 
     public List<Player> getPlayer() {
@@ -19,11 +18,11 @@ public class Table {
         this.players.add(new Player(name));
     }
 
-    public void addCardsToCompare(Player player) {
-        this.cardsToCompare.add(player.getTopCardFromPile());
-    }
-
     public void removePlayer(Player player) {
         players.remove(player);
+    }
+
+    public void resetTable() {
+        players.clear();
     }
 }
