@@ -52,11 +52,11 @@ public class GameLogic {
     private void playGame() {
         int amountOfPlayers = getAmountOfPlayers();
         addPlayersToTable(amountOfPlayers);
+        dealer.dealCards();
+        setPlayerAsStarting(table.getPlayer().get(0), true);
 
         boolean isGameOver = false;
         while (!isGameOver) {
-            dealer.dealCards();
-            setPlayerAsStarting(table.getPlayer().get(0), true);
             Player startingPlayer = getStartingPlayer();
             viewer.printMessage(startingPlayer.getName() + " your card:");
             viewer.printMessage(startingPlayer.getTopCardFromPile().toString());
@@ -64,8 +64,8 @@ public class GameLogic {
             int parameter = getParameterToCompare();
             List<Card> cardsToCompare = getCardsToCompare();
             User destinationUser = getWiningUser(parameter, cardsToCompare);
-            int curentAmountOfPlayers = table.getPlayer().size();
-            calculateAmountOfCards(destinationUser, cardsToCompare, curentAmountOfPlayers);
+            int currentAmountOfPlayers = table.getPlayer().size();
+            calculateAmountOfCards(destinationUser, cardsToCompare, currentAmountOfPlayers);
             viewer.printMessage(destinationUser.getName() + " won round");
             changeUsersOrder(destinationUser);
             checkIfUsersInGame();
