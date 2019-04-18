@@ -55,6 +55,7 @@ public class GameLogic {
 
         boolean isGameOver = false;
         while (!isGameOver) {
+            dealer.dealCards();
             setPlayerAsStarting(table.getPlayer().get(0), true);
             Player startingPlayer = getStartingPlayer();
             viewer.printMessage(startingPlayer.getName() + " your card:");
