@@ -18,7 +18,7 @@ public class CardDaoXML extends CardDaoLoadXML implements CardDao {
     }
 
     private void parseCards(Document document) {
-        NodeList nodeListCards = document.getElementsByTagName("Cars");
+        NodeList nodeListCards = document.getElementsByTagName("Car");
         for (int i = 0; i < nodeListCards.getLength(); i++) {
             Node nodeCard = nodeListCards.item(i);
             if (nodeCard.getNodeType() == Node.ELEMENT_NODE) {

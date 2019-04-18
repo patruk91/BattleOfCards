@@ -1,14 +1,12 @@
 package com.codecool.gameelement;
 
-import java.io.BufferedReader;
-
 public class Card {
-    Pile containingPile;
-    double topSpeed;
-    double powerWeightRatio;
-    double price;
-    int capacity;
-    String carName;
+    private Pile containingPile;
+    private double topSpeed;
+    private double powerWeightRatio;
+    private double price;
+    private int capacity;
+    private String carName;
 
     public Card(String carName, double topSpeed, double powerWeightRatio, double price, int capacity) {
         this.topSpeed = topSpeed;
@@ -55,6 +53,8 @@ public class Card {
     @Override
     public String toString() {
         StringBuilder stringBuilder = new StringBuilder();
-        return stringBuilder.append(String.format("Name: %s\nTop speed: %d mph Capacity: %d cc Power to waigth ratio: %d bhp/ton Price: %d UDS")).toString();
+        return stringBuilder.append(String.format("Name: %s\nTop speed: %s mph Capacity:" +
+                " %s cc Power to weight ratio: %s bhp/ton Price: %s USD",
+                carName, topSpeed, capacity, powerWeightRatio, price)).toString();
     }
 }
