@@ -61,6 +61,6 @@ public class Card {
     public String toString() {
         StringBuilder stringBuilder = new StringBuilder();
         return stringBuilder.append(String.format("Name: %s\nTop speed: %s mph | Power to weight ratio: %s bhp/ton | Price: %s USD | Capacity: %s cc",
-                carName, topSpeed, capacity, powerWeightRatio, price)).toString();
+                carName, topSpeed, powerWeightRatio, price, capacity)).toString();
     }
 }
