@@ -57,10 +57,9 @@ public class GameLogic {
         while (!isGameOver) {
             Player startingPlayer = getStartingPlayer();
             showPlayersCardAmount();
-            viewer.printMessage(startingPlayer.getName() + " your card:");
-            viewer.printMessage(startingPlayer.getTopCardFromPile().toString());
-            viewer.printMessage(startingPlayer.getName() + ": chose attribute to compare:");
-            int parameter = getParameterToCompare();
+            viewer.printMessage(startingPlayer.getName() + " your card:\n");
+            viewer.printMessage(startingPlayer.getTopCardFromPile().toString() + "\n");
+            int parameter = getParameterToCompare(startingPlayer);
             List<Card> cardsToCompare = getCardsToCompare();
             User destinationUser = getWiningUser(parameter, cardsToCompare);
             calculateAmountOfCards(destinationUser, cardsToCompare);
@@ -128,8 +127,9 @@ public class GameLogic {
         player.setUserFirst(bool);
     }
 
-    private int getParameterToCompare() {
+    private int getParameterToCompare(Player player) {
         viewer.printAttributesToCompare();
+        viewer.printQuestion(player.getName() + ": chose attribute to compare");
         return reader.getNumberInRange(1, 4);
     }
 

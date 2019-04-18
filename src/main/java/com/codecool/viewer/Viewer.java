@@ -30,7 +30,7 @@ public class Viewer {
     }
 
     public void printQuestion(String question) {
-        System.out.println(question);
+        System.out.print(question + "?: ");
     }
 
     public void rules() {
