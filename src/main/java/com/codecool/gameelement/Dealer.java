@@ -4,6 +4,7 @@ import com.codecool.dao.CardDao;
 import com.codecool.dao.CardDaoXML;
 import com.codecool.iteratorinterface.ResetIterator;
 
+import java.util.Collections;
 import java.util.Iterator;
 
 public class Dealer extends User{
@@ -43,4 +44,9 @@ public class Dealer extends User{
     public void resetIterator() {
         deckIterator.resetIterator();
     }
+
+    public void shuffleDeck() {
+        Collections.shuffle(deck.getDeck());
+    }
+
 }

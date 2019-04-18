@@ -20,10 +20,6 @@ public class Deck {
         return cards;
     }
 
-    public void shuffleDeck() {
-        Collections.shuffle(cards);
-    }
-
     public ResetIterator<Card> getDeckIterator() {
         return deckIterator;
     }
