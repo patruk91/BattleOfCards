@@ -48,7 +48,7 @@ public class Card {
 
     public void moveToPile(Pile destinationPile) {
         destinationPile.addCard(this);
-        containingPile.removeCard(this);
+        containingPile.removeLastCard();
         setContainingPile(destinationPile);
     }
 
