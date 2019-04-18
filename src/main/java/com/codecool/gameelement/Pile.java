@@ -31,6 +31,11 @@ public class Pile {
         cards.remove(card);
     }
 
+    public void removeLastCard() {
+        cards.remove(cards.size()-1);
+    }
+
+
     public List<Card> getCards() {
         return cards;
     }
