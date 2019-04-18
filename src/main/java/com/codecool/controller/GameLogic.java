@@ -49,6 +49,7 @@ public class GameLogic {
     private void playGame() {
         int amountOfPlayers = getAmountOfPlayers();
         addPlayersToTable(amountOfPlayers);
+        dealer.shuffleDeck();
         dealer.dealCards();
         setPlayerAsStarting(table.getPlayer().get(0), true);
 
