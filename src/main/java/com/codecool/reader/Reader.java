@@ -43,7 +43,7 @@ public class Reader {
             if(validator.checkIfStringIsNotEmpty(input)) {
                 if(validator.checkIfNumber(input)) {
                     int intInput = Integer.parseInt(input);
-                    if(validator.checkIfNumberInRange(intInput, start, end)) {
+                    if(validator.checkIfNumberInRange(start, end, intInput)) {
                         result = intInput;
                         isAnswerCorrect = true;
                     }
