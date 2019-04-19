@@ -35,6 +35,22 @@ public class Reader {
         return result;
     }
 
+    public String getCarName() {
+        String result = "";
+        boolean isAnswerCorrect = false;
+        while(!isAnswerCorrect) {
+            viewer.printQuestion("Enter car name");
+            String name = getStringFromUser();
+            if(validator.checkIfStringIsNotEmpty(name)) {
+                isAnswerCorrect = true;
+                result = name;
+            } else {
+                viewer.printError();
+            }
+        }
+        return result;
+    }
+
     public int getNumberInRange(int start, int end) {
         int result = 0;
         boolean isAnswerCorrect = false;
@@ -48,6 +64,29 @@ public class Reader {
                         isAnswerCorrect = true;
                     }
                 }
+            }
+        }
+        return result;
+    }
+
+    public double getStatisticNumber(String question) {
+        double result = 0;
+        boolean isAnswerCorrect = false;
+        while(!isAnswerCorrect) {
+            viewer.printQuestion(question);
+            String input = getStringFromUser();
+            if(validator.checkIfStringIsNotEmpty(input)) {
+                if(validator.checkIfNumber(input)) {
+                    double intInput = Double.parseDouble(input);
+                    if(intInput >= 0) {
+                        result = intInput;
+                        isAnswerCorrect = true;
+                    }
+                } else {
+                    viewer.printError();
+                }
+            } else {
+                viewer.printError();
             }
         }
         return result;

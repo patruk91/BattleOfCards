@@ -1,0 +1,524 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<Cars>
+        
+    <Car name="AlfaRomeo Brera">
+                
+        <Statistics>
+                        
+            <Statistic id="Speed">149</Statistic>
+                        
+            <Statistic id="Ratio">162</Statistic>
+                        
+            <Statistic id="Price">5000</Statistic>
+                        
+            <Statistic id="Capacity">3197</Statistic>
+                    
+        </Statistics>
+            
+    </Car>
+        
+    <Car name="Bizzarrini Strada5300">
+                
+        <Statistics>
+                        
+            <Statistic id="Speed">163</Statistic>
+                        
+            <Statistic id="Ratio">341</Statistic>
+                        
+            <Statistic id="Price">450000</Statistic>
+                        
+            <Statistic id="Capacity">5358</Statistic>
+                    
+        </Statistics>
+            
+    </Car>
+        
+    <Car name="DeTomaso Guara">
+                
+        <Statistics>
+                        
+            <Statistic id="Speed">170</Statistic>
+                        
+            <Statistic id="Ratio">295</Statistic>
+                        
+            <Statistic id="Price">80000</Statistic>
+                        
+            <Statistic id="Capacity">4601</Statistic>
+                    
+        </Statistics>
+            
+    </Car>
+        
+    <Car name="Ford MustangGT">
+                
+        <Statistics>
+                        
+            <Statistic id="Speed">155</Statistic>
+                        
+            <Statistic id="Ratio">256</Statistic>
+                        
+            <Statistic id="Price">38000</Statistic>
+                        
+            <Statistic id="Capacity">4949</Statistic>
+                    
+        </Statistics>
+            
+    </Car>
+        
+    <Car name="Vauxhall Astra">
+                
+        <Statistics>
+                        
+            <Statistic id="Speed">148</Statistic>
+                        
+            <Statistic id="Ratio">173</Statistic>
+                        
+            <Statistic id="Price">5000</Statistic>
+                        
+            <Statistic id="Capacity">1998</Statistic>
+                    
+        </Statistics>
+            
+    </Car>
+        
+    <Car name="AC SchnitzerACS8">
+                
+        <Statistics>
+                        
+            <Statistic id="Speed">149</Statistic>
+                        
+            <Statistic id="Ratio">246</Statistic>
+                        
+            <Statistic id="Price">125000</Statistic>
+                        
+            <Statistic id="Capacity">1499</Statistic>
+                    
+        </Statistics>
+            
+    </Car>
+        
+    <Car name="AstonMartin Rapide">
+                
+        <Statistics>
+                        
+            <Statistic id="Speed">189</Statistic>
+                        
+            <Statistic id="Ratio">245</Statistic>
+                        
+            <Statistic id="Price">98000</Statistic>
+                        
+            <Statistic id="Capacity">5935</Statistic>
+                    
+        </Statistics>
+            
+    </Car>
+        
+    <Car name="Audi R8">
+                
+        <Statistics>
+                        
+            <Statistic id="Speed">187</Statistic>
+                        
+            <Statistic id="Ratio">269</Statistic>
+                        
+            <Statistic id="Price">50000</Statistic>
+                        
+            <Statistic id="Capacity">4163</Statistic>
+                    
+        </Statistics>
+            
+    </Car>
+        
+    <Car name="Lexus LS600H">
+                
+        <Statistics>
+                        
+            <Statistic id="Speed">155</Statistic>
+                        
+            <Statistic id="Ratio">169</Statistic>
+                        
+            <Statistic id="Price">30000</Statistic>
+                        
+            <Statistic id="Capacity">4969</Statistic>
+                    
+        </Statistics>
+            
+    </Car>
+        
+    <Car name="Toyota Supra">
+                
+        <Statistics>
+                        
+            <Statistic id="Speed">155</Statistic>
+                        
+            <Statistic id="Ratio">228</Statistic>
+                        
+            <Statistic id="Price">65000</Statistic>
+                        
+            <Statistic id="Capacity">2998</Statistic>
+                    
+        </Statistics>
+            
+    </Car>
+        
+    <Car name="Volkswagen GolfR32">
+                
+        <Statistics>
+                        
+            <Statistic id="Speed">154</Statistic>
+                        
+            <Statistic id="Ratio">163</Statistic>
+                        
+            <Statistic id="Price">20000</Statistic>
+                        
+            <Statistic id="Capacity">3189</Statistic>
+                    
+        </Statistics>
+            
+    </Car>
+        
+    <Car name="AlfaRomeo Giulia">
+                
+        <Statistics>
+                        
+            <Statistic id="Speed">191</Statistic>
+                        
+            <Statistic id="Ratio">323</Statistic>
+                        
+            <Statistic id="Price">59000</Statistic>
+                        
+            <Statistic id="Capacity">2891</Statistic>
+                    
+        </Statistics>
+            
+    </Car>
+        
+    <Car name="AstonMartin Vantage">
+                
+        <Statistics>
+                        
+            <Statistic id="Speed">195</Statistic>
+                        
+            <Statistic id="Ratio">334</Statistic>
+                        
+            <Statistic id="Price">121000</Statistic>
+                        
+            <Statistic id="Capacity">3982</Statistic>
+                    
+        </Statistics>
+            
+    </Car>
+        
+    <Car name="Audi RS4">
+                
+        <Statistics>
+                        
+            <Statistic id="Speed">155</Statistic>
+                        
+            <Statistic id="Ratio">255</Statistic>
+                        
+            <Statistic id="Price">25000</Statistic>
+                        
+            <Statistic id="Capacity">4163</Statistic>
+                    
+        </Statistics>
+            
+    </Car>
+        
+    <Car name="Audi TT">
+                
+        <Statistics>
+                        
+            <Statistic id="Speed">155</Statistic>
+                        
+            <Statistic id="Ratio">235</Statistic>
+                        
+            <Statistic id="Price">30000</Statistic>
+                        
+            <Statistic id="Capacity">2480</Statistic>
+                    
+        </Statistics>
+            
+    </Car>
+        
+    <Car name="BMW 760i">
+                
+        <Statistics>
+                        
+            <Statistic id="Speed">155</Statistic>
+                        
+            <Statistic id="Ratio">222</Statistic>
+                        
+            <Statistic id="Price">15000</Statistic>
+                        
+            <Statistic id="Capacity">5972</Statistic>
+                    
+        </Statistics>
+            
+    </Car>
+        
+    <Car name="BMW M4">
+                
+        <Statistics>
+                        
+            <Statistic id="Speed">155</Statistic>
+                        
+            <Statistic id="Ratio">268</Statistic>
+                        
+            <Statistic id="Price">57000</Statistic>
+                        
+            <Statistic id="Capacity">2979</Statistic>
+                    
+        </Statistics>
+            
+    </Car>
+        
+    <Car name="Bugatti Chiron">
+                
+        <Statistics>
+                        
+            <Statistic id="Speed">261</Statistic>
+                        
+            <Statistic id="Ratio">753</Statistic>
+                        
+            <Statistic id="Price">2500000</Statistic>
+                        
+            <Statistic id="Capacity">7993</Statistic>
+                    
+        </Statistics>
+            
+    </Car>
+        
+    <Car name="Cadillac 16">
+                
+        <Statistics>
+                        
+            <Statistic id="Speed">150</Statistic>
+                        
+            <Statistic id="Ratio">400</Statistic>
+                        
+            <Statistic id="Price">1000000</Statistic>
+                        
+            <Statistic id="Capacity">13600</Statistic>
+                    
+        </Statistics>
+            
+    </Car>
+        
+    <Car name="Chevrolet CorvetteC5">
+                
+        <Statistics>
+                        
+            <Statistic id="Speed">170</Statistic>
+                        
+            <Statistic id="Ratio">239</Statistic>
+                        
+            <Statistic id="Price">25000</Statistic>
+                        
+            <Statistic id="Capacity">5665</Statistic>
+                    
+        </Statistics>
+            
+    </Car>
+        
+    <Car name="Dodge ViperGTS">
+                
+        <Statistics>
+                        
+            <Statistic id="Speed">177</Statistic>
+                        
+            <Statistic id="Ratio">298</Statistic>
+                        
+            <Statistic id="Price">50000</Statistic>
+                        
+            <Statistic id="Capacity">7990</Statistic>
+                    
+        </Statistics>
+            
+    </Car>
+        
+    <Car name="Ferrari F40">
+                
+        <Statistics>
+                        
+            <Statistic id="Speed">201</Statistic>
+                        
+            <Statistic id="Ratio">442</Statistic>
+                        
+            <Statistic id="Price">800000</Statistic>
+                        
+            <Statistic id="Capacity">2936</Statistic>
+                    
+        </Statistics>
+            
+    </Car>
+        
+    <Car name="Ford Indigo">
+                
+        <Statistics>
+                        
+            <Statistic id="Speed">170</Statistic>
+                        
+            <Statistic id="Ratio">300</Statistic>
+                        
+            <Statistic id="Price">30000</Statistic>
+                        
+            <Statistic id="Capacity">6000</Statistic>
+                    
+        </Statistics>
+            
+    </Car>
+        
+    <Car name="Honda CivicTypeR">
+                
+        <Statistics>
+                        
+            <Statistic id="Speed">170</Statistic>
+                        
+            <Statistic id="Ratio">220</Statistic>
+                        
+            <Statistic id="Price">31000</Statistic>
+                        
+            <Statistic id="Capacity">1998</Statistic>
+                    
+        </Statistics>
+            
+    </Car>
+        
+    <Car name="Jaguar XJR-S">
+                
+        <Statistics>
+                        
+            <Statistic id="Speed">160</Statistic>
+                        
+            <Statistic id="Ratio">187</Statistic>
+                        
+            <Statistic id="Price">15000</Statistic>
+                        
+            <Statistic id="Capacity">5993</Statistic>
+                    
+        </Statistics>
+            
+    </Car>
+        
+    <Car name="Koenigsegg CCR">
+                
+        <Statistics>
+                        
+            <Statistic id="Speed">242</Statistic>
+                        
+            <Statistic id="Ratio">694</Statistic>
+                        
+            <Statistic id="Price">500000</Statistic>
+                        
+            <Statistic id="Capacity">4700</Statistic>
+                    
+        </Statistics>
+            
+    </Car>
+        
+    <Car name="Maserati Gransport">
+                
+        <Statistics>
+                        
+            <Statistic id="Speed">180</Statistic>
+                        
+            <Statistic id="Ratio">240</Statistic>
+                        
+            <Statistic id="Price">25000</Statistic>
+                        
+            <Statistic id="Capacity">4244</Statistic>
+                    
+        </Statistics>
+            
+    </Car>
+        
+    <Car name="Lamborghini Cala">
+                
+        <Statistics>
+                        
+            <Statistic id="Speed">185</Statistic>
+                        
+            <Statistic id="Ratio">250</Statistic>
+                        
+            <Statistic id="Price">30000</Statistic>
+                        
+            <Statistic id="Capacity">3900</Statistic>
+                    
+        </Statistics>
+            
+    </Car>
+        
+    <Car name="Mazda RX500">
+                
+        <Statistics>
+                        
+            <Statistic id="Speed">145</Statistic>
+                        
+            <Statistic id="Ratio">295</Statistic>
+                        
+            <Statistic id="Price">25000</Statistic>
+                        
+            <Statistic id="Capacity">982</Statistic>
+                    
+        </Statistics>
+            
+    </Car>
+        
+    <Car name="Mercedes CLKDTM">
+                
+        <Statistics>
+                        
+            <Statistic id="Speed">199</Statistic>
+                        
+            <Statistic id="Ratio">338</Statistic>
+                        
+            <Statistic id="Price">200000</Statistic>
+                        
+            <Statistic id="Capacity">5739</Statistic>
+                    
+        </Statistics>
+            
+    </Car>
+        
+    <Car name="Mercedes G63AMG">
+                
+        <Statistics>
+                        
+            <Statistic id="Speed">130</Statistic>
+                        
+            <Statistic id="Ratio">214</Statistic>
+                        
+            <Statistic id="Price">80000</Statistic>
+                        
+            <Statistic id="Capacity">5461</Statistic>
+                    
+        </Statistics>
+            
+    </Car>
+        
+    <Car name="Tesla Roadster">
+                
+        <Statistics>
+                        
+            <Statistic id="Speed">125</Statistic>
+                        
+            <Statistic id="Ratio">207</Statistic>
+                        
+            <Statistic id="Price">40000</Statistic>
+                        
+            <Statistic id="Capacity">0</Statistic>
+                    
+        </Statistics>
+            
+    </Car>
+    
+    <Car name="ewr">
+        <Statistics>
+            <Statistic id="Speed">1.0</Statistic>
+            <Statistic id="Ratio">12.0</Statistic>
+            <Statistic id="Price">2.0</Statistic>
+            <Statistic id="Capacity">12</Statistic>
+        </Statistics>
+    </Car>
+</Cars>

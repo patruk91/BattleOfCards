@@ -6,4 +6,6 @@ import java.util.List;
 
 public interface CardDao {
     List<Card> getAllCards();
+
+    void addCar(Card card);
 }
