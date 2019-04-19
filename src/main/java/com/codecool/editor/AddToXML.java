@@ -14,6 +14,7 @@ public class AddToXML extends CardDaoXML {
     private Document doc;
 
     public AddToXML() {
+        super();
         this.doc = getDocument();
     }
 
@@ -41,7 +42,7 @@ public class AddToXML extends CardDaoXML {
         statisticPrice.appendChild(doc.createTextNode(Double.toString(card.getPrice())));
 
         statisticCapacity.setAttribute("id", "Capacity");
-        statisticCapacity.appendChild(doc.createTextNode(Double.toString(card.getCapacity())));
+        statisticCapacity.appendChild(doc.createTextNode(Integer.toString(card.getCapacity())));
 
 
         newCar.appendChild(statistics);
@@ -62,7 +63,7 @@ public class AddToXML extends CardDaoXML {
 //            transformer.setOutputProperty(OutputKeys.OMIT_XML_DECLARATION, "yes");
             transformer.setOutputProperty(OutputKeys.INDENT, "yes");
             DOMSource source = new DOMSource(doc);
-            StreamResult result = new StreamResult("src/main/resources/nncars.xml");
+            StreamResult result = new StreamResult("cars.xml");
             transformer.transform(source, result);
         } catch (TransformerConfigurationException e) {
             e.printStackTrace();
