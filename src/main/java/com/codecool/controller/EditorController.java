@@ -1,11 +1,8 @@
 package com.codecool.controller;
 
-<<<<<<< HEAD
 import com.codecool.editor.AddToXML;
-=======
 import com.codecool.comparator.CollectCardDataController;
 import com.codecool.gameelement.Card;
->>>>>>> 89b7bbacbaf824587592bc074ecb0b0ed405e238
 import com.codecool.reader.Reader;
 import com.codecool.viewer.Viewer;
 
