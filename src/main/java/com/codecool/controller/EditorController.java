@@ -1,5 +1,7 @@
 package com.codecool.controller;
 
+import com.codecool.comparator.CollectCardDataController;
+import com.codecool.gameelement.Card;
 import com.codecool.reader.Reader;
 import com.codecool.viewer.Viewer;
 
@@ -23,7 +25,9 @@ public class EditorController {
             int option = reader.getNumberInRange(0, 3);
             switch (option) {
                 case 1:
-//                    addCar(car);
+                    CollectCardDataController collectData = new CollectCardDataController(reader, viewer);
+                    Card card = collectData.getCardData();
+                    addCar(card);
                     break;
                 case 2:
 //                    editCar(car);
