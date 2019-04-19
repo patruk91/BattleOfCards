@@ -35,9 +35,12 @@ public class GameLogic {
                     playGame();
                     break;
                 case 2:
-                    viewer.rules();
+                    EditorController editor = new EditorController(reader, viewer);
                     break;
                 case 3:
+                    viewer.rules();
+                    break;
+                case 4:
                     viewer.credits();
                     break;
                 case 0:
