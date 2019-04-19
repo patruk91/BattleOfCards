@@ -9,7 +9,11 @@ public class Viewer {
 
     public void printMenu() {
         System.out.println("Cars card game v1.0");
-        System.out.println("1. Game start\n2. Rules\n3. Credits\n0. Exit");
+        System.out.println("1. Game start\n2. Edit cards\n3. Rules\n4. Credits\n0. Exit");
+    }
+
+    public void printXmlEditorMenu() {
+        System.out.println("1. Add car\n2. Edit car\n3. Remove car\n0. Exit");
     }
 
     public void printAttributesToCompare() {
