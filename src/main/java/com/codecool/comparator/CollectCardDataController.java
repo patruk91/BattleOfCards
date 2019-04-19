@@ -18,6 +18,7 @@ public class CollectCardDataController {
         double topSpeed = reader.getStatisticNumber("Enter top speed");
         double powerWeightRati = reader.getStatisticNumber("Enter power to weight ratio");
         double price = reader.getStatisticNumber("Enter price");
+        viewer.printQuestion("Enter capacity");
         int capacity = reader.getNumberInRange(0, 999999999);
         return new Card(carName, topSpeed, powerWeightRati, price, capacity);
     }

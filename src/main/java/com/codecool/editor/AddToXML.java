@@ -62,7 +62,7 @@ public class AddToXML extends CardDaoXML {
 //            transformer.setOutputProperty(OutputKeys.OMIT_XML_DECLARATION, "yes");
             transformer.setOutputProperty(OutputKeys.INDENT, "yes");
             DOMSource source = new DOMSource(doc);
-            StreamResult result = new StreamResult("nncars.xml");
+            StreamResult result = new StreamResult("src/main/resources/nncars.xml");
             transformer.transform(source, result);
         } catch (TransformerConfigurationException e) {
             e.printStackTrace();
