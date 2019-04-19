@@ -1,5 +1,6 @@
 package com.codecool.controller;
 
+import com.codecool.editor.AddToXML;
 import com.codecool.reader.Reader;
 import com.codecool.viewer.Viewer;
 
@@ -23,7 +24,8 @@ public class EditorController {
             int option = reader.getNumberInRange(0, 3);
             switch (option) {
                 case 1:
-//                    addCar(car);
+                    AddToXML addToXML = new AddToXML();
+                    addToXML.addCar(card);
                     break;
                 case 2:
 //                    editCar(car);

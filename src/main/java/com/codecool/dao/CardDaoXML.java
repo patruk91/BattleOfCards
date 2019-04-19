@@ -51,4 +51,8 @@ public class CardDaoXML extends CardDaoLoadXML implements CardDao {
     public void addCar(Card card) {
 
     }
+
+    public Document getDocument() {
+        return getDoc();
+    }
 }
